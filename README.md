@@ -39,12 +39,14 @@ Detalle: [best_practices.md](best_practices.md) y [security_tips.md](security_ti
 
 ## Documentación
 
+- [Informe técnico de la actividad](Informe_Seguridad_FinControl.pdf)
+- [Anexo: registro de uso de IA](Anexo_Uso_IA_FinControl.pdf)
 - [Vulnerabilidades](vulnerabilities.md)
 - [Best Practices](best_practices.md)
 - [Security Tips](security_tips.md)
 - [Security Improvement Program](security_improvement_program.md)
 
-## Cómo abrir y ejecutar en Android Studio
+## Cómo ejecutar la aplicación de forma segura
 
 ### Requisitos
 
@@ -93,7 +95,7 @@ Todas las librerías que el código importa están fijadas en `gradle/libs.versi
 - `com.google.android.gms:play-services-maps` (mapa)
 - Tests: JUnit 4, Robolectric, Espresso y `androidx.test.ext:junit`
 
-La versión inicial con la clave incrustada en el código quedó conservada en el tag `legacy-google-maps`, solo como referencia histórica.
+La versión inicial con la clave incrustada en el código no está publicada: el repositorio se consolidó con un reset el 30/10/2026 para blindar esa clave (commits verificables en GitHub: `3ebc3e4` y `ba68d14`). El antes y el después queda en el historial Git local del equipo (verificable con `git show`) y en [`vulnerabilities.md`](vulnerabilities.md), que documenta cada hallazgo con su PoC y su corrección.
 
 
 ## Reporte de Vulnerabilidades

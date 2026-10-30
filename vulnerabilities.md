@@ -2,6 +2,8 @@
 
 Análisis de seguridad del proyecto **FinControl** (Actividad 2.5 — Manejo de elementos de seguridad).
 
+> **Nota sobre los commits citados:** los hashes (`43e9135`, `8ff0560`, etc.) corresponden al historial de Git del clon local del equipo, donde se conserva el antes y el después completo (verificable con `git show`). El 30/10/2026 el repositorio público de GitHub se consolidó con un reset (commit `3ebc3e4`) para blindar la clave de Google Maps expuesta en la v1, por lo que la comparación antes/después verificable por quien consulta este repositorio se apoya en este documento y en [`best_practices.md`](best_practices.md), [`security_tips.md`](security_tips.md) y [`security_improvement_program.md`](security_improvement_program.md).
+
 - **App:** FinControl — control de gastos y suscripciones (Android, Java, minSdk 30).
 - **Método:** análisis **estático** de código (revisión manual asistida + verificación estructural automatizada del APK y de las fuentes) sobre la **versión inicial (v1, commit `43e9135` y anteriores)**, seguido de re-análisis tras la corrección (v2, commit `8ff0560`).
 - **Reproducción con MobSF:** instrucciones al final. Cada vulnerabilidad indica el archivo, la línea de comportamiento y cómo se corrigió.
