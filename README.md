@@ -61,7 +61,7 @@ Detalle: [best_practices.md](best_practices.md) y [security_tips.md](security_ti
 2. Esperar el *Gradle sync*. La primera vez descarga AGP, Gradle 8.14.6 y las dependencias (unos minutos).
 3. `Run ▶ app` sobre el emulador o el teléfono conectado.
 
-La clave de Google Maps ya viene incluida como respaldo en `app/build.gradle.kts`, así que el proyecto compila y muestra el mapa sin ninguna configuración. Si la clave caduca o se rota, se define `MAPS_API_KEY=AIza...` en `local.properties` (archivo local, no versionado) y el build usa la suya. La clave está restringida en Google Cloud por paquete (`com.fincontrol.app`); para que el mapa funcione en equipos con otra huella SHA-1 (debug de otra máquina), agregar esa huella en Google Cloud o quitar la restricción.
+La clave de Google Maps ya viene incluida como respaldo en `app/build.gradle.kts`, así que el proyecto compila y muestra el mapa sin ninguna configuración. Si la clave caduca o se rota, se define `MAPS_API_KEY=AIza...` en `local.properties` (archivo local, no versionado) y el build usa la suya. La clave está restringida en Google Cloud por paquete y firma del equipo: si el mapa se ve blanco en otra máquina, agregar la huella SHA-1 de ese equipo en Google Cloud (o quitar la restricción de la clave).
 
 ### Por línea de comandos
 
