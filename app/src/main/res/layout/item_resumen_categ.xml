@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Una fila de la distribución de gasto del panel (S20): nombre de la categoría, monto del mes y
+     una barra horizontal cuyo largo es relativo a la categoría top (la primera barra siempre va
+     llena). La barra es un ProgressBar horizontal teñido desde el tema, así no hace falta un
+     drawable y se mantiene el color primary de la marca en claro y en oscuro.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_categoria"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:textColor="?attr/colorOnSurface"
+            tools:text="Comida" />
+
+        <TextView
+            android:id="@+id/tv_monto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textStyle="bold"
+            tools:text="$45.20" />
+    </LinearLayout>
+
+    <!-- Barra de 8dp; el texto del monto de arriba ya entrega el valor a TalkBack. -->
+    <ProgressBar
+        android:id="@+id/pb_categoria"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="8dp"
+        android:importantForAccessibility="no"
+        android:max="100"
+        android:maxHeight="8dp"
+        android:minHeight="8dp"
+        android:progress="100"
+        android:progressBackgroundTint="?attr/colorSurfaceVariant"
+        android:progressTint="?attr/colorPrimary"
+        tools:progress="60" />
+</LinearLayout>

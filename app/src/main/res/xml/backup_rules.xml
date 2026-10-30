@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Reglas de respaldo (API < 31): nada del usuario sale del equipo. La base SQLite tiene los datos
+     financieros y las preferencias de sesión están cifradas; restaurarlas en otro equipo también
+     restauraría la sesión y los datos de la billetera, así que los dos almacenes quedan excluidos a
+     propósito. (allowBackup=false en el manifiesto es el control principal; estas reglas dejan la
+     exclusión explícita por si algún día se vuelve a activar el flag.)
+-->
+<full-backup-content>
+    <exclude domain="database" path="." />
+    <exclude domain="sharedpref" path="." />
+</full-backup-content>

@@ -1,0 +1,56 @@
+[versions]
+# --- Build plugins -----------------------------------------------------------
+# AGP 8.13.2 is the last stable 8.x line: it is supported by every Android
+# Studio release of the last ~18 months, unlike AGP 9.x which needs a very
+# recent IDE. Paired with Gradle 8.14.6 (see gradle/wrapper) and JDK 17.
+agp = "8.13.2"
+
+# --- AndroidX / Google libraries (pinned: nothing is resolved by transitive
+#     dependency, so every machine builds the same graph) --------------------
+annotation = "1.9.1"
+core = "1.18.0"
+appcompat = "1.8.0"
+activityKtx = "1.13.0"
+recyclerview = "1.4.0"
+constraintlayout = "2.2.2"
+material = "1.14.0"
+securityCrypto = "1.1.0"
+
+# --- Google Play services ----------------------------------------------------
+# play-services-location: fused location provider.
+# play-services-base: GoogleApiAvailability, used to detect a device/emulator
+# without Play services and fall back to the platform LocationManager.
+playServicesLocation = "21.3.0"
+playServicesBase = "18.5.0"
+
+# --- Google Maps (requiere clave con facturacion activa) --------------------
+playServicesMaps = "20.1.0"
+
+# --- Test -------------------------------------------------------------------
+junit = "4.13.2"
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
+robolectric = "4.17"
+
+[libraries]
+# One entry per artifact the app imports directly.
+annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+core = { group = "androidx.core", name = "core", version.ref = "core" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
+recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+play-services-base = { group = "com.google.android.gms", name = "play-services-base", version.ref = "playServicesBase" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
+
+# Tests
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+         Paleta de FinControl. Azules y verdes fríos de finanzas: el azul da confianza y control, el
+         teal es para suscripciones y montos positivos, y el rojo queda solo para la plata que sale.
+         Los layouts tienen que usar los roles del tema (?attr/colorPrimary,
+         ?attr/colorOnSurface...) y no estos hex, para que el modo oscuro siga funcionando.
+    -->
+    <color name="primary">#1565C0</color>
+    <color name="primary_dark">#0D47A1</color>
+    <color name="primary_container">#E3F2FD</color>
+    <color name="on_primary_container">#0D47A1</color>
+
+    <color name="secondary">#00897B</color>
+    <color name="secondary_container">#E0F2F1</color>
+    <color name="on_secondary_container">#004D40</color>
+    <!-- Alias antiguo, se mantiene porque hay referencias que lo usan. -->
+    <color name="accent">#00897B</color>
+
+    <!-- Plata que sale: solo gastos y errores. -->
+    <color name="danger">#E53935</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="surface">#F5F5F5</color>
+    <color name="on_surface">#1C1B1F</color>
+    <color name="text_primary">#1C1B1F</color>
+
+    <!--
+         Roles de legibilidad edge-to-edge: los usa el tema oscuro y en claro no se usan, pero
+         tienen que estar en la config por defecto para que AAPT linkee.
+    -->
+    <color name="window_background">#FAFAFA</color>
+    <color name="window_background_night">#111318</color>
+    <color name="primary_container_night">#1E3A5F</color>
+    <color name="on_primary_container_night">#A6C8FF</color>
+    <color name="secondary_container_night">#00403A</color>
+    <color name="on_secondary_container_night">#4DB6AC</color>
+</resources>

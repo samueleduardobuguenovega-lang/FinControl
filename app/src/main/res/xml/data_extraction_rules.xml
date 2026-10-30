@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Reglas de extracción de datos (API 31+): la base y las preferencias de sesión cifradas quedan
+     fuera de los respaldos en la nube y de la transferencia entre equipos, así los datos de la
+     billetera y la sesión no se pueden sacar ni reutilizar en otra parte.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="." />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="." />
+    </device-transfer>
+</data-extraction-rules>

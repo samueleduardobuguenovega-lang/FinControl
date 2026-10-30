@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">FinControl</string>
+
+    <!-- Login y registro -->
+    <string name="login_titulo">FinControl</string>
+    <string name="login_subtitulo">Control de gastos y suscripciones</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="hint_nombre">Nombre completo</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="btn_registrar">Crear cuenta</string>
+    <string name="no_tiene_cuenta">¿No tienes cuenta? Regístrate</string>
+    <string name="ya_tiene_cuenta">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="password_helper">Mínimo 4 caracteres</string>
+    <string name="error_campo_vacio">Completa todos los campos</string>
+    <string name="error_credenciales">Usuario o contraseña incorrectos</string>
+    <string name="error_usuario_existe">Ese usuario ya existe</string>
+    <string name="error_password_corta">La contraseña debe tener al menos 4 caracteres</string>
+
+    <!-- Panel principal -->
+    <string name="dashboard_hola">Hola, %1$s</string>
+    <string name="dashboard_resumen">Tu resumen financiero del mes</string>
+    <string name="dashboard_total_mes">Gastado este mes</string>
+    <string name="dashboard_subs_mes">Suscripciones del mes</string>
+    <string name="dashboard_total_subs">Total suscripciones activas</string>
+    <string name="dashboard_accesos">Accesos rápidos</string>
+    <string name="btn_gastos">Gastos</string>
+    <string name="btn_suscripciones">Suscripciones</string>
+    <string name="btn_mapa">Ver mapa de gastos</string>
+    <string name="btn_cerrar_sesion">Cerrar sesión</string>
+    <string name="dashboard_proximas">Próximos cobros</string>
+    <string name="dashboard_sin_proximas">No tienes cobros próximos en 7 días</string>
+
+    <!-- Gastos -->
+    <string name="gastos_titulo">Mis gastos</string>
+    <string name="gasto_nuevo">Nuevo gasto</string>
+    <string name="gasto_form_seccion">Datos del gasto</string>
+    <string name="hint_monto">Monto</string>
+    <string name="hint_categoria">Categoría</string>
+    <string name="hint_fecha">Fecha (AAAA-MM-DD)</string>
+    <string name="hint_descripcion">Descripción</string>
+    <string name="monto_helper">Monto en pesos</string>
+    <string name="fecha_helper">Formato AAAA-MM-DD</string>
+    <string name="descripcion_helper">Opcional: detalle o comercio</string>
+    <string name="btn_guardar_gasto">Guardar gasto</string>
+    <string name="btn_ubicacion">Incluir ubicación actual</string>
+    <string name="ubicacion_obtenida">Ubicación guardada</string>
+    <string name="sin_gastos">Aún no registras gastos</string>
+    <string name="error_monto">Ingresa un monto válido mayor que cero</string>
+    <string name="error_fecha">Formato de fecha inválido (usa AAAA-MM-DD)</string>
+    <string name="permiso_ubicacion_denegado">Sin permiso de ubicación se guardará el gasto sin ubicación</string>
+
+    <!-- Suscripciones -->
+    <string name="subs_titulo">Suscripciones y pagos</string>
+    <string name="sub_nueva">Nueva suscripción</string>
+    <string name="sub_form_seccion">Datos de la suscripción</string>
+    <string name="hint_nombre_sub">Nombre (ej. Netflix)</string>
+    <string name="hint_dia_cobro">Día de cobro (1-31)</string>
+    <string name="dia_cobro_helper">Te avisaremos con una notificación ese día</string>
+    <string name="btn_guardar_sub">Guardar suscripción</string>
+    <string name="sin_subs">Aún no registras suscripciones</string>
+    <string name="sub_activa">Activa</string>
+    <string name="sub_pausada">Pausada</string>
+    <string name="recordatorio_titulo">Recordatorio de pago</string>
+    <string name="recordatorio_texto">%1$s vence hoy (%2$s). Monto: $%3$s</string>
+    <string name="recordatorio_channel">Recordatorios de pagos</string>
+    <string name="error_dia_cobro">El día de cobro debe estar entre 1 y 31</string>
+
+    <!-- Mapa -->
+    <string name="mapa_titulo">Mapa de gastos</string>
+    <string name="mapa_resumen">Gastos registrados con ubicación</string>
+    <string name="mapa_sin_datos">No hay gastos con ubicación registrados</string>
+
+    <!-- Errores generales -->
+    <string name="error_inesperado">Ocurrió un error. Intenta nuevamente.</string>
+    <!-- Categorías (S12-S14) -->
+    <string name="categorias_titulo">Categorías</string>
+    <string name="cat_seccion_fijadas">Fijadas</string>
+    <string name="cat_seccion_otras">Otras (por uso)</string>
+    <string name="cat_nueva">Nueva categoría</string>
+    <string name="cat_hint_nombre">Nombre de la categoría</string>
+    <string name="cat_ya_existe">Esa categoría ya existe</string>
+    <string name="cat_agregada">Categoría agregada</string>
+    <string name="cat_renombrada">Categoría renombrada</string>
+    <string name="cat_no_eliminable">No se puede eliminar: tiene gastos registrados</string>
+    <string name="cat_confirmar_eliminar">¿Eliminar la categoría "%1$s"?</string>
+    <string name="cat_fijar">Fijar arriba</string>
+    <string name="cat_quitar_fijada">Quitar de fijadas</string>
+    <string name="cat_arrastar">Mantén presionado y arrastra para ordenar</string>
+    <string name="cat_usada">Usada %1$d veces</string>
+    <string name="cat_sel_titulo">Categoría</string>
+    <string name="cat_editar_nombre">Renombrar</string>
+
+    <!-- CRUD de gastos y suscripciones (S15) -->
+    <string name="gasto_editar_titulo">Editar gasto</string>
+    <string name="gasto_actualizado">Gasto actualizado</string>
+    <string name="gasto_eliminado">Gasto eliminado</string>
+    <string name="gasto_confirmar_eliminar">¿Eliminar este gasto?</string>
+    <string name="sub_editar_titulo">Editar suscripción</string>
+    <string name="sub_editada">Suscripción actualizada</string>
+    <string name="sub_eliminada">Suscripción eliminada</string>
+    <string name="sub_confirmar_eliminar">¿Eliminar la suscripción "%1$s"?</string>
+    <string name="accion_editar">Editar</string>
+    <string name="accion_eliminar">Eliminar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <!-- Cuenta y perfil (S16) -->
+    <string name="cuenta_titulo">Mi cuenta</string>
+    <string name="cuenta_resumen">Tu perfil y preferencias</string>
+    <string name="btn_guardar_cambios">Guardar cambios</string>
+    <string name="cambio_foto">Cambiar foto</string>
+    <string name="perfil_actualizado">Perfil actualizado</string>
+    <string name="tema_titulo">Tema</string>
+    <string name="tema_sistema">Según el sistema</string>
+    <string name="tema_claro">Claro</string>
+    <string name="tema_oscuro">Oscuro</string>
+    <string name="cuenta_salir_confirmar">¿Cerrar sesión en FinControl?</string>
+    <!-- Plantillas frecuentes, meses, deslizar y resumen (S17-S20) -->
+    <string name="plantillas_titulo">Frecuentes</string>
+    <string name="plantilla_guardar_switch">Guardar como gasto frecuente</string>
+    <string name="plantilla_agregada">Gasto frecuente agregado en un toque</string>
+    <string name="plantilla_eliminada">Plantilla eliminada</string>
+    <string name="plantilla_confirmar_eliminar">¿Eliminar la plantilla "%1$s"?</string>
+    <string name="plantilla_vacias">Guarda un gasto como frecuente y agrégalo en un toque</string>
+    <string name="sugerencia_guardar">¿Guardar "%1$s" como gasto frecuente?</string>
+    <string name="sugerencia_si">Sí, guardar</string>
+    <string name="mes_total">Total de %1$s</string>
+    <string name="undo_eliminar">Gasto eliminado</string>
+    <string name="undo_deshacer">Deshacer</string>
+    <string name="resumen_titulo">Top categorías del mes</string>
+    <string name="resumen_vacio">Registra gastos para ver tu top de categorías</string>
+    <!-- Ronda 3: ingresos, períodos, teclado, categorías visuales (S21-S24) -->
+    <string name="tab_ingresos">INGRESOS</string>
+    <string name="saldo_titulo">Saldo del mes</string>
+    <string name="sin_ingresos">Aún no registras ingresos</string>
+    <string name="periodo_dia">Día</string>
+    <string name="periodo_semana">Semana</string>
+    <string name="periodo_mes">Mes</string>
+    <string name="periodo_ano">Año</string>
+    <string name="cat_color">Color</string>
+    <string name="cat_icono">Icono</string>
+    <string name="cat_tipo_ingreso">Es un ingreso</string>
+    <string name="cat_color_aplicado">Categoría actualizada</string>
+</resources>

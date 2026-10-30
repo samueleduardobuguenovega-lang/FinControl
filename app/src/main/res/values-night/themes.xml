@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+         Copia oscura de Theme.FinControl: mismos roles de marca con los colores container de M3 en
+         oscuro, iconos claros en las barras del sistema y fondo de ventana oscuro, así las barras y
+         la zona detrás de ellas no se pierden en modo oscuro.
+    -->
+    <style name="Theme.FinControl" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorPrimaryContainer">@color/primary_container_night</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container_night</item>
+
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/secondary_container_night</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container_night</item>
+
+        <item name="colorError">@color/danger</item>
+        <item name="colorOnError">@color/white</item>
+
+        <!-- Legibilidad edge-to-edge en modo oscuro. -->
+        <item name="android:windowBackground">@color/window_background_night</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

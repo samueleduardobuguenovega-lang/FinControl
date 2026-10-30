@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Config de seguridad de red: el HTTP en claro queda bloqueado en toda la app. Toda la
+     comunicación remota (Google Play Services) va por TLS. Historia: la v1 no tenía esta config
+     (ver security_tips.md).
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>
