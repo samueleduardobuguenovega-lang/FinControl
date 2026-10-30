@@ -31,7 +31,7 @@ Detalle completo, pruebas de concepto y correcciones: [vulnerabilities.md](vulne
 - Comunicación segura (HTTPS obligatorio vía `networkSecurityConfig`)
 - Validación y sanitización de todas las entradas del usuario
 - Consultas SQL 100% parametrizadas (anti-inyección)
-- Clave de Google Maps fuera del repositorio: se lee de `local.properties` y se inyecta como recurso al compilar
+- Clave de Google Maps inyectada como recurso al compilar: se lee de `local.properties` y ahora incluye una clave de respaldo versionada (restringida a `com.fincontrol.app`) para que el clon funcione sin configuración; ver la actualización en [`best_practices.md`](best_practices.md) BP4
 - Backups y extracción de datos deshabilitados
 - Componentes exportados al mínimo (solo el launcher)
 
@@ -61,7 +61,7 @@ Detalle: [best_practices.md](best_practices.md) y [security_tips.md](security_ti
 2. Esperar el *Gradle sync*. La primera vez descarga AGP, Gradle 8.14.6 y las dependencias (unos minutos).
 3. `Run ▶ app` sobre el emulador o el teléfono conectado.
 
-Hay que agregar la clave de Google Maps al `local.properties` (archivo local, no versionado), con la línea `MAPS_API_KEY=AIza...`. Sin clave la aplicación funciona completa salvo el mapa, que queda en blanco. La clave se restringe en Google Cloud por paquete (`com.fincontrol.app`) y huella SHA-1 del certificado.
+La clave de Google Maps ya viene incluida como respaldo en `app/build.gradle.kts`, así que el proyecto compila y muestra el mapa sin ninguna configuración. Si la clave caduca o se rota, se define `MAPS_API_KEY=AIza...` en `local.properties` (archivo local, no versionado) y el build usa la suya. La clave está restringida en Google Cloud por paquete (`com.fincontrol.app`); para que el mapa funcione en equipos con otra huella SHA-1 (debug de otra máquina), agregar esa huella en Google Cloud o quitar la restricción.
 
 ### Por línea de comandos
 
@@ -81,7 +81,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 | `INSTALL_FAILED_OLDER_SDK` | El emulador es anterior a API 30: crear uno con API 30 o superior. |
 | `Unsupported class file major version` o `invalid source release` | El *Gradle JDK* no es 17: cambiarlo en la configuración de Gradle. |
 | La app crashea al abrir en el emulador | Corregido en esta versión: si el Keystore del emulador no puede abrir el almacén cifrado, la sesión pasa a memoria en vez de matar el proceso (`SessionManager`). |
-| El mapa queda en blanco | Falta `MAPS_API_KEY` en `local.properties` o la clave no autoriza ese paquete y esa huella SHA-1. |
+| El mapa queda en blanco | La clave del build no autoriza ese paquete/huella en Google Cloud: agregar la huella SHA-1 de la máquina y el paquete a la clave, o definir `MAPS_API_KEY` en `local.properties`. |
 | "No hay ubicación" al guardar un gasto | En el emulador, fijar coordenadas en `Extended Controls ▸ Location`; sin Google Play services la app usa el `LocationManager` del sistema. |
 
 ### Dependencias declaradas

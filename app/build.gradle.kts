@@ -5,14 +5,18 @@ plugins {
 }
 
 // La clave de Google Maps se lee de local.properties (archivo local, no versionado)
-// y se inyecta como recurso google_maps_key, asi no queda en el repositorio.
+// y se inyecta como recurso google_maps_key. Si el archivo local no define MAPS_API_KEY
+// (por ejemplo, en un clon recién descargado), se usa la clave de respaldo de abajo,
+// limitada en Google Cloud a este paquete, de modo que clonar y ejecutar funciona
+// sin configuración previa y sin tocar el manifiesto.
 val clavesLocales = Properties().apply {
     val archivo = rootProject.file("local.properties")
     if (archivo.exists()) {
         archivo.inputStream().use { load(it) }
     }
 }
-val mapsApiKey: String = clavesLocales.getProperty("MAPS_API_KEY") ?: ""
+val mapsApiKey: String = clavesLocales.getProperty("MAPS_API_KEY")
+        ?: "AIzaSyCq4JM--e0DBKAws3xNkNzGIcKaT2ZiNsc" // respaldo para clonar y ejecutar (sustituir/rotar en Google Cloud si se la repartió)
 
 android {
     namespace = "com.fincontrol.app"

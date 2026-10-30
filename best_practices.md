@@ -47,7 +47,8 @@ Documento requerido por la Actividad 2.5: detalle de las **Buenas Prácticas** i
 ## BP4 — Clave de API fuera del código y del repositorio
 
 **Qué se implementó**
-- La clave de Google Maps **no vive en el código ni en el repositorio**: `app/build.gradle.kts` la lee de `local.properties` (archivo local, ignorado por Git) y la inyecta como recurso `google_maps_key` al compilar. El manifiesto solo referencia `@string/google_maps_key`.
+- La clave de Google Maps **no vive en el código ni en el manifiesto**: `app/build.gradle.kts` la lee de `local.properties` (archivo local, ignorado por Git) y la inyecta como recurso `google_maps_key` al compilar. El manifiesto solo referencia `@string/google_maps_key`.
+  - **Actualización de entrega (30/10):** se añadió una clave de respaldo versionada en `app/build.gradle.kts`, limitada en Google Cloud a `com.fincontrol.app`, para que el proyecto descargado sin configuración muestre el mapa (la disciplina de inyección y restricción se mantiene; la clave de respaldo debe rotarse si el repo se difunde).
 - La clave está restringida en Google Cloud por nombre de paquete (`com.fincontrol.app`) y por huella SHA-1 del certificado de firma, así que no funciona desde otra aplicación ni desde otro equipo.
 - Historia: la v1 tenía la clave literal en el manifiesto y en el repositorio (V4); la v2 la movió a `local.properties` (commit `8ff0560`); la versión publicada mantiene esa misma disciplina con el SDK de Google Maps (commit `d666190`).
 

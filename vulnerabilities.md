@@ -57,7 +57,8 @@ Análisis de seguridad del proyecto **FinControl** (Actividad 2.5 — Manejo de 
 
 - **Ubicación (v1):** `app/src/main/AndroidManifest.xml`, `meta-data com.google.android.geo.API_KEY` con el valor literal en el repositorio.
 - **Impacto:** la clave queda en el control de versiones y en el APK (extraíble con `aapt`/MobSF *Har*delivery de la API). Puede consumir cuota y facturación de Google Cloud.
-- **Corrección (v2):** la clave se inyectó en tiempo de build desde `local.properties` (commit `8ff0560`) y se restringió en Google Cloud por paquete y huella SHA-1. La versión publicada conserva Google Maps con esa disciplina: el manifiesto referencia `@string/google_maps_key` y el valor se genera al compilar, nunca se versiona (commit `d666190`).
+- **Corrección (v2):** la clave se inyectó en tiempo de build desde `local.properties` (commit `8ff0560`) y se restringió en Google Cloud por paquete y huella SHA-1. La versión publicada conserva Google Maps con esa disciplina: el manifiesto referencia `@string/google_maps_key` y el valor se genera al compilar (commit `d666190`).
+  - **Actualización de entrega (30/10):** se añadió en `app/build.gradle.kts` una clave de respaldo versionada, limitada en Google Cloud a `com.fincontrol.app`, para que el clon del docente compile y muestre el mapa sin configuración previa. La inyección por `local.properties` sigue disponible (prevalece si existe). La clave de respaldo debe rotarse si se difunde el repositorio más allá de esta entrega.
 
 ## V5 — Backup habilitado + sesión sin cifrar (Media)
 
